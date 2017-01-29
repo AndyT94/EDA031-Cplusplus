@@ -5,6 +5,11 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+  if(argc != 2) {
+    cerr << "Wrong number of arguments" << endl;
+    exit(1);
+  }
+
   ifstream input(argv[1]);
   if (!input) { // "if the file couldn’t be opened"
     cerr << "Could not open: " << argv[1] << endl;
