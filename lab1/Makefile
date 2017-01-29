@@ -20,14 +20,16 @@ LDFLAGS =   -g
 #LDFLAGS +=  -stdlib=libc++
 
 # Targets
-PROGS = ltest hello
+PROGS = ltest hello encode decode
 
 all: $(PROGS)
 
 # Targets rely on implicit rules for compiling and linking
 ltest: ltest.o list.o
 hello: hello.o
-	
+encode: encode.o coding.o
+decode: decode.o coding.o
+
 # Phony targets
 .PHONY: all clean
 

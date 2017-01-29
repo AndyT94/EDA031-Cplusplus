@@ -79,7 +79,7 @@ void List::remove(int d, DeleteFlag df) {
 	if(foundValue) {
 		if(prev == nullptr) {
 			first = first->next;
-		}	else {
+		} else {
 			prev->next = current->next;
 			delete current;
 		}
