@@ -16,8 +16,9 @@ int main(int argc, char* argv[]) {
     exit(1);
   }
 
+  string file = argv[1];
   ofstream enc_file;
-  enc_file.open("file.enc");
+  enc_file.open(file + ".enc");
 
   char c = input.get();
   while (input.good()) {

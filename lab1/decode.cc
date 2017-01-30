@@ -16,8 +16,9 @@ int main(int argc, char* argv[]) {
     exit(1);
   }
 
+  string file = argv[1];
   ofstream dec_file;
-  dec_file.open("file.dec");
+  dec_file.open(file + ".dec");
 
   char c = input.get();
   while (input.good()) {
