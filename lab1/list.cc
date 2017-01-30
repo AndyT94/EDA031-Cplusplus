@@ -78,7 +78,9 @@ void List::remove(int d, DeleteFlag df) {
 
 	if(foundValue) {
 		if(prev == nullptr) {
+			Node* tmp = first;
 			first = first->next;
+			delete tmp;
 		} else {
 			prev->next = current->next;
 			delete current;
