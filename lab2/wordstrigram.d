@@ -1,0 +1,1 @@
+wordstrigram.o: wordstrigram.cc
