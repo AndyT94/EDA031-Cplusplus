@@ -21,12 +21,13 @@ LDFLAGS =   -g #-L.
 #LDFLAGS +=  -stdlib=libc++
 
 # Targets
-PROGS = wordstrigram
+PROGS = spell #wordstrigram
 
 all: $(PROGS)
 
 # Targets rely on implicit rules for compiling and linking
-wordstrigram: wordstrigram.o
+#wordstrigram: wordstrigram.o
+spell: spell.o dictionary.o
 
 # Phony targets
 .PHONY: all clean
