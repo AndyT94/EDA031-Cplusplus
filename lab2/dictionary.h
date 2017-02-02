@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 #include <unordered_set>
+#include "word.h"
+
+const int maxLength = 25;
 
 class Dictionary {
 public:
@@ -12,6 +15,7 @@ public:
 	std::vector<std::string> get_suggestions(const std::string& word) const;
 private:
 	std::unordered_set<std::string> dict;
+	std::vector<Word> words[maxLength];
 };
 
 #endif

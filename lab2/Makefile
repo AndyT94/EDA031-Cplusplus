@@ -27,7 +27,7 @@ all: $(PROGS)
 
 # Targets rely on implicit rules for compiling and linking
 #wordstrigram: wordstrigram.o
-spell: spell.o dictionary.o
+spell: spell.o dictionary.o word.o
 
 # Phony targets
 .PHONY: all clean

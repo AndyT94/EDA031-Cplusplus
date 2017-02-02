@@ -14,8 +14,32 @@ Dictionary::Dictionary() {
 
 	if (input.is_open()) {
 		while (getline(input,line)) {
-			size_t firstDigit = line.find_first_of("0123456789");
-			dict.insert(line.substr(0, firstDigit - 1));
+			string word;
+			vector<string> trigrams;
+
+			vector<string> split;
+			size_t curr_pos = line.find(' ');
+			size_t prev_pos = 0;
+
+			while (curr_pos != string::npos) {
+				split.push_back(line.substr(prev_pos, curr_pos - prev_pos));
+				prev_pos = curr_pos + 1;
+				curr_pos = line.find(' ', prev_pos);
+			}
+			split.push_back(line.substr(prev_pos, line.size() - prev_pos));
+
+			auto it = split.begin();
+			word = *it;
+			++it; //skip digit
+			++it;
+			while(it != split.end()) {
+				trigrams.push_back(*it);
+				++it;
+			}
+
+			dict.insert(word);
+			Word w = Word(word, trigrams);
+			words[word.size() - 1].push_back(w);
 		}
 		input.close();
 	} else {
