@@ -10,6 +10,7 @@ public:
 	bool contains(const std::string& word) const;
 	std::vector<std::string> get_suggestions(const std::string& word) const;
 private:
+	std::unordered_set<string> words;
 };
 
 #endif
