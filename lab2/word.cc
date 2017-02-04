@@ -27,6 +27,5 @@ unsigned int Word::get_matches(const vector<string>& t) const {
 			++j;
 		}
 	}
-
-	return 0;
+	return matches;
 }
