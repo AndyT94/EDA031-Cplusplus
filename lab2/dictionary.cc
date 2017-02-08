@@ -97,7 +97,7 @@ void Dictionary::rank_suggestions(vector<string>& suggestions,
 			for(unsigned int i = 1; i <= word.size(); ++i) {
 				for(unsigned int j = 1; j <= candidate.size(); ++j) {
 					d[i][j] = min({d[i-1][j] + 1, d[i][j-1] + 1,
-						(word[i] == candidate[j]) ? (d[i-1][j-1]) : (d[i-1][j-1] + 1)});
+						(word[i-1] == candidate[j-1]) ? (d[i-1][j-1]) : (d[i-1][j-1] + 1)});
 				}
 			}
 			ranked_words.push_back(make_pair(d[word.size()][candidate.size()], suggestions[k]));
