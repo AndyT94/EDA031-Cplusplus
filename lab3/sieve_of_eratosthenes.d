@@ -1,0 +1,1 @@
+sieve_of_eratosthenes.o: sieve_of_eratosthenes.cc
