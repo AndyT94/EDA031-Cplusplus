@@ -3,12 +3,12 @@
 
 class TagRemover {
 public:
-TagRemover(const std::istream& in);
-void print(const std::ostream& out);
+TagRemover(std::istream& in);
+void print(std::ostream& out);
 
 private:
   std::string text;
-  void removeTags(const std::istream& in);
+  void removeTags(std::istream& in);
 };
 
 #endif
