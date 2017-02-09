@@ -14,17 +14,29 @@ Date::Date() {
 Date::Date(int y, int m, int d) {}
 
 int Date::getYear() const {
-	return 0;
+	return year;
 }
 
 int Date::getMonth() const {
-	return 0;
+	return month;
 }
 
 int Date::getDay() const {
-	return 0;
+	return day;
 }
 
 void Date::next() {
-}
+	if(day + 1 > daysPerMonth[month]) {
+		day = 1;
 
+		if(month + 1 > 12) {
+			month = 1;
+			year += 1;
+		} else {
+			month += 1;
+		}
+
+	} else {
+		day += 1;
+	}
+}
