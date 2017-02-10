@@ -21,13 +21,14 @@ LDFLAGS =   -g #-L.
 #LDFLAGS +=  -stdlib=libc++
 
 # Targets
-PROGS = tagremover_main sieve_of_eratosthenes
+PROGS = tagremover_main sieve_of_eratosthenes date_test
 
 all: $(PROGS)
 
 # Targets rely on implicit rules for compiling and linking
 tagremover_main: tagremover_main.o tagremover.o
 sieve_of_eratosthenes: sieve_of_eratosthenes.o
+date_test: date_test.o date.o
 
 # Phony targets
 .PHONY: all clean
