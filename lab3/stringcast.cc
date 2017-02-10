@@ -1,8 +1,13 @@
 #include "date.h"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
+template <typename T>
+inline T string_cast<T>(const string& s)  {
 
+}
 
 int main() {
   try {
