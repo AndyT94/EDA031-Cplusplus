@@ -7,7 +7,7 @@ using namespace std;
 
 template <typename T>
 inline string toString(T a)  {
-  stringstream out;
+  ostringstream out;
   out << a;
   return out.str();
 }
