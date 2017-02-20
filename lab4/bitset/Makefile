@@ -21,12 +21,14 @@ LDFLAGS =   -g #-L.
 #LDFLAGS +=  -stdlib=libc++
 
 # Targets
-PROGS = simplebitsettest
+PROGS = simplebitsettest bitsettest1 bitsettest2
 
 all: $(PROGS)
 
 # Targets rely on implicit rules for compiling and linking
 simplebitsettest: simplebitsettest.o simplebitset.o
+bitsettest1: bitsettest1.o bitset.o bitreference.o
+bitsettest2: bitsettest2.o bitset.o bitreference.o
 
 # Phony targets
 .PHONY: all clean
