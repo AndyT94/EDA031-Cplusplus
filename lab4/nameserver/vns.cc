@@ -6,7 +6,7 @@ void VNS::insert(const HostName& host, const IPAddress& ip) {
 }
 
 bool VNS::remove(const HostName& host) {
-  auto it = find_if(database.begin(), database.end(), [host](std::pair<HostName, IPAddress> pair) {
+  auto it = find_if(database.begin(), database.end(), [host](const std::pair<HostName, IPAddress>& pair) {
     return pair.first == host;
   });
 
@@ -19,7 +19,7 @@ bool VNS::remove(const HostName& host) {
 }
 
 IPAddress VNS::lookup(const HostName& host) const {
-  auto it = find_if(database.begin(), database.end(), [host](std::pair<HostName, IPAddress> pair) {
+  auto it = find_if(database.begin(), database.end(), [host](const std::pair<HostName, IPAddress>& pair) {
     return pair.first == host;
   });
 

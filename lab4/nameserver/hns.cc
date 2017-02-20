@@ -12,7 +12,7 @@ void HNS::insert(const HostName& host, const IPAddress& ip) {
 bool HNS::remove(const HostName& host) {
   unsigned int index = str_hash(host) % database.size();
 
-  auto it = find_if(database[index].begin(), database[index].end(), [host](std::pair<HostName, IPAddress> pair) {
+  auto it = find_if(database[index].begin(), database[index].end(), [host](const std::pair<HostName, IPAddress> &pair) {
     return pair.first == host;
   });
 
@@ -27,7 +27,7 @@ bool HNS::remove(const HostName& host) {
 IPAddress HNS::lookup(const HostName& host) const {
   unsigned int index = str_hash(host) % database.size();
 
-  auto it = find_if(database[index].begin(), database[index].end(), [host](std::pair<HostName, IPAddress> pair) {
+  auto it = find_if(database[index].begin(), database[index].end(), [host](const std::pair<HostName, IPAddress> &pair) {
     return pair.first == host;
   });
 
